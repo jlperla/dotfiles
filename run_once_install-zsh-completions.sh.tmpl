@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Ensure completions directory exists
+mkdir -p "$HOME/.zsh/completions"
+
+# chezmoi completion
+if command -v chezmoi >/dev/null 2>&1; then
+  chezmoi completion zsh > "$HOME/.zsh/completions/_chezmoi"
+fi
