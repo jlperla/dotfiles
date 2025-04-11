@@ -1,0 +1,36 @@
+[user]
+    name = Jesse Perla
+    email = jesseperla@gmail.com
+
+[core]
+    editor = code --wait  # Use VS Code as the default editor
+    autocrlf = input      # Normalize line endings (useful for cross-platform work)
+    pager = less          # Set the pager for Git commands
+
+[alias]
+    st = status           # Short alias for `git status`
+    co = checkout         # Short alias for `git checkout`
+    br = branch           # Short alias for `git branch`
+    cm = commit           # Short alias for `git commit`
+    lg = log --oneline --graph --decorate --all  # Pretty log view
+
+[push]
+    default = simple      # Use simple push behavior
+
+[diff]
+    tool = vscode         # Use VS Code as the diff tool
+
+[merge]
+    tool = vscode         # Use VS Code as the merge tool
+    conflictstyle = diff3 # Show conflicts with a 3-way diff
+
+[credential]
+{{ if eq .chezmoi.os "darwin" }}
+    helper = osxkeychain  # Use macOS Keychain for storing credentials
+{{ end }}
+
+[init]
+    defaultBranch = main  # Set the default branch name to `main`
+
+[color]
+    ui = auto             # Enable colored output

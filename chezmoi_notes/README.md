@@ -3,12 +3,13 @@
 On a new machine, install the following:
 1. [VS code](https://code.visualstudio.com/Download) or `brew install --cask visual-studio-code`
 2. [Chezmoi](https://www.chezmoi.io): `sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME`
-3. Ruff `curl -LsSf https://astral.sh/ruff/install.sh | sh`
-   -One-time vscode: https://github.com/astral-sh/ruff-vscode?tab=readme-ov-file
+3. One-time vscode: https://github.com/astral-sh/ruff-vscode?tab=readme-ov-file
 
 This will automatically install
 - oh-my-zsh
 - uv
+- ruff
+- julia
 
 To redo on an existing installation,
 ```bash
