@@ -9,12 +9,7 @@ Time to move away from conda, `uv`
 uv init
 uv venv --python 3.11
 ```
-- Can set the python interpreter for the project, or just rely on setting the default in vscode config:
-```json
-{
-"python.defaultInterpreterPath": "./.venv/bin/python"
-}
-```
+
  - Finally, best to ensure that conda is not in the path variabvles, by checking the `zshrc` files, etc.  If successful, `python` does not work outside of a virtual environment.
 
 ## UV File Setup
@@ -23,3 +18,10 @@ uv venv --python 3.11
 
 ## New Repo Setup
 Just use `uv sync` which will create the `.venv` from the pyproject, etc.
+
+# Jupyter with UV
+- Will not automatically register kernel with the `uv sync`.
+- Can trigger with `python -m ipykernel install --user --name=.venv --display-name "Python (.venv)"`  Only once per project required.
+
+# Scripts
+- `uv run` will run the script in the virtual environment, embedded dependencies are in comments in the script.  Use `pixi` for the same format, so no lockin.
