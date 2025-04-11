@@ -20,3 +20,12 @@ chezmoi init --apply $GITHUB_USERNAME
 - `chezmoi add ~/.config/ruff/ruff.toml`
 - `chezmoi edit ~/.config/ruff/ruff.toml`
 - `chezmoi apply`
+
+## Add to Keychain
+```bash
+chezmoi secret keyring set --service=openai --user=jlperla
+```
+Save the value, then in the `.zshrc` file, add:
+```bash
+export OPENAI_API_KEY="{{ keyring "openai" "jlperla" }}"
+```
