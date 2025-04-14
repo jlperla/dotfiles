@@ -11,21 +11,3 @@ if ! command -v ruff >/dev/null 2>&1; then
   echo "Installing ruff..."
   curl -LsSf https://astral.sh/ruff/install.sh | sh
 fi
-
-# install bat via apt on Ubuntu and homebrew on macos
-{{ if eq .chezmoi.os "linux" }}
-  if command -v apt >/dev/null 2>&1; then
-    sudo apt update && sudo apt install -y bat ripgrep fd-find
-  fi
-{{ else if eq .chezmoi.os "darwin" }}
-  # Install via brew if on macOS
-  if ! command -v brew >/dev/null 2>&1; then
-    echo "Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
-
-{{ end }}
-if ! command -v julia >/dev/null 2>&1; then
-  echo "Installing Julia..."
-  curl -fsSL https://install.julialang.org | sh
-fi

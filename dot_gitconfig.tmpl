@@ -21,12 +21,6 @@
 
 [merge]
     tool = vscode         # Use VS Code as the merge tool
-    conflictstyle = diff3 # Show conflicts with a 3-way diff
-
-[credential]
-{{ if eq .chezmoi.os "darwin" }}
-    helper = osxkeychain  # Use macOS Keychain for storing credentials
-{{ end }}
 
 [init]
     defaultBranch = main  # Set the default branch name to `main`

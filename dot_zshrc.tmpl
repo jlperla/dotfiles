@@ -144,6 +144,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Shell completions
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
-
-# API keys
-export OPENAI_API_KEY="{{ keyring "openai" "jlperla" }}"
