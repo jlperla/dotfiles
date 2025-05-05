@@ -2,7 +2,8 @@
     "window.commandCenter": 1,
     "cursor.cpp.enablePartialAccepts": true,
     "cSpell.enabledFileTypes": {
-        "python": false
+        "python": false,
+        "jsonc": false
     },
     "[python]": {
         "editor.formatOnSave": true,
@@ -49,5 +50,12 @@
     },
     "quarto.render.renderOnSave": true,
     "git.defaultCloneDirectory": "/Users/jlperla/GitHub",
-    "python.defaultInterpreterPath": "./.venv/bin/python" 
+    "python.defaultInterpreterPath": "./.venv/bin/python",
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "cursor.cpp.disabledLanguages": [
+        "plaintext"
+    ]
 }
