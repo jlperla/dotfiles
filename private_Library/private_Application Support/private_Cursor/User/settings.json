@@ -57,5 +57,5 @@
     "julia.symbolCacheDownload": true,
     "cursor.cpp.disabledLanguages": [
         "plaintext"
-    ]
+    ]    
 }
