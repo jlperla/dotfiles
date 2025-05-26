@@ -16,6 +16,11 @@ uv venv --python 3.11
 - Manually go through the requirements files and do an `uv add XXXX` package for them.  These will be added to the pyproject file.  Push the `pyproject.toml` and the `uv.lock` to the repo
 - Can use `uv export --format requirements-txt --output requirements.txt` to export to a requirements file, but better to stick with a `.venv`
 
+## Update package versions
+```bash
+uv pip compile pyproject.toml --upgrade
+```
+
 ## New Repo Setup
 Just use `uv sync` which will create the `.venv` from the pyproject, etc.
 
