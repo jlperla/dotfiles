@@ -43,10 +43,15 @@ if [[ $- == *i* ]]; then
   [ -f ".venv/bin/activate" ] && source .venv/bin/activate 2>/dev/null
 fi
 
-# ~/.zshrc (managed by chezmoi)
-# Load local (private) exports if present
-if [ -f "$HOME/.zshrc.secrets" ]; then
-  . "$HOME/.zshrc.secrets"
-fi
-
-export OPENAI_API_KEY="{{ .data.openai_api_key }}"
+{{- $cfgdir := .chezmoi.configDir -}}
+{{- if (stat (joinPath $cfgdir "chezmoi.local.toml")).exists -}}
+  {{- $cfg := fromToml (readFile (joinPath $cfgdir "chezmoi.local.toml")) -}}
+  {{- with $cfg.data.openai_api_key }}
+export OPENAI_API_KEY="{{ . }}"
+  {{- end }}
+{{- else if (stat (joinPath $cfgdir "chezmoi.local.yaml")).exists -}}
+  {{- $cfg := fromYaml (readFile (joinPath $cfgdir "chezmoi.local.yaml")) -}}
+  {{- with $cfg.data.openai_api_key }}
+export OPENAI_API_KEY="{{ . }}"
+  {{- end }}
+{{- end }}
