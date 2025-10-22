@@ -49,4 +49,4 @@ if [ -f "$HOME/.zshrc.secrets" ]; then
   . "$HOME/.zshrc.secrets"
 fi
 
-export OPENAI_API_KEY="{{ or .data.openai_api_key (promptSecret "Enter OPENAI_API_KEY") }}"
+export OPENAI_API_KEY="{{ .data.openai_api_key }}"
