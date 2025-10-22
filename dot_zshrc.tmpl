@@ -43,4 +43,8 @@ if [[ $- == *i* ]]; then
   [ -f ".venv/bin/activate" ] && source .venv/bin/activate 2>/dev/null
 fi
 
-export OPEN_API_KEY="{{ prompt "Enter your OPEN_API_KEY" }}"
+# ~/.zshrc (managed by chezmoi)
+# Load local (private) exports if present
+if [ -f "$HOME/.zshrc.secrets" ]; then
+  . "$HOME/.zshrc.secrets"
+fi
