@@ -48,3 +48,8 @@ fi
 if [ -f "$HOME/.zshrc.secrets" ]; then
   . "$HOME/.zshrc.secrets"
 fi
+
+{{- $OPEN_API_KEY := or (getenv "OPEN_API_KEY") (promptPasswordOnce "open_api_key" "Enter your OPEN_API_KEY") -}}
+{{- if $OPEN_API_KEY -}}
+export OPEN_API_KEY="{{ $OPEN_API_KEY }}"
+{{- end -}}
