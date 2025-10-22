@@ -20,12 +20,7 @@ chezmoi init --apply $GITHUB_USERNAME
 - `chezmoi edit ~/.config/ruff/ruff.toml`
 - `chezmoi apply`
 
-## Local setup:
-```bash
-mkdir -p ~/.config/chezmoi && chmod 700 ~/.config/chezmoi && cat > ~/.config/chezmoi/chezmoi.local.toml <<'EOF'
-[data]
-openai_api_key = "sk-REPLACE_ME"
-EOF
-chmod 600 ~/.config/chezmoi/chezmoi.local.toml
-code ~/.config/chezmoi/chezmoi.local.toml
+## For now, edit the API_KEY directly
+```
+code ~/.zshrc
 ```
